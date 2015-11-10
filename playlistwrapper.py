@@ -1,4 +1,5 @@
 from spotify import Playlist
+import TrackWrapper
 
 class PlaylistWrapper(Playlist):
 	def __init__(self):
@@ -6,5 +7,5 @@ class PlaylistWrapper(Playlist):
 
 	# call this whenever 
 	def sort_tracks(self):
-		for track in self.tracks:
-			
+		self.tracks = sorted(self.tracks, key = lambda track: track.net_vote)
+
