@@ -1,9 +1,11 @@
 from spotify import Playlist
 
 class PlaylistWrapper(Playlist):
-	def __init__(self):
+	def __init__(self, name, creator):
 		super().__init__()
 		self.ranking_map = defaultdict(int)
+		self.name = name
+		self.creator = spotify.remembered_user_name
 
 	# call this whenever any upvote/downvote is pressed or song is queued to preserve order
 	def sort_tracks(self):
